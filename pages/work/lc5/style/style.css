@@ -1,0 +1,57 @@
+.bt1{
+    padding: 10px;
+    margin: 0, 20px, 0, 0;
+    margin-right: 20px;
+    border: 3px rgb(168, 11, 11) solid;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    background-color: rgb(119, 3, 3);
+    width: 100px;
+    height: 50px;
+};
+
+.hh{
+    padding: 50px;
+}
+.bt2{
+    padding: 10px;
+    margin-left: 10px;
+    border: 3px rgb(229, 145, 85) solid;
+    color: black;
+    background-color: burlywood;
+    border-radius: 5px;
+    width: 100px;
+    height: 50px;
+}
+.test1{
+    background-color: rgb(174, 114, 70);
+    display: inline-block;
+}
+.test2{
+    background-color: rgb(137, 92, 59);
+
+}
+.test3{
+    background-color: rgb(102, 67, 43);
+
+}
+p{
+    width: 200px;
+    display: inline-block;
+    margin-right:20px;
+}
+
+li{
+    color: black;
+    padding: 10px;
+    border: 1px black;
+    border-radius: 5px;
+    width:300px;
+}
+li a{
+    text-decoration: none;
+    color: black;
+}
+li:hover{
+    background-color: burlywood;
+}

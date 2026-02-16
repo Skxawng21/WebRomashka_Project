@@ -1,0 +1,98 @@
+.line{
+    list-style: none;
+}
+.line li {
+    background: rgb(212, 120, 120);
+    padding: 20px;
+    display: inline-block;
+    margin: 20px;
+}
+.links a{
+    width: 250px;
+    height:auto;
+    padding: 20px;
+    display:block;
+    background: blue;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 15px;
+}
+.blocks{
+    height: 100px;
+}
+.blocks div{
+    width: 20px;
+    background: red;
+    padding: 20px;
+    position: relative;
+    top:50px;
+    margin: 15px;
+    text-align: center;    
+    display: inline;
+}
+.blocks .non{
+    display: none;
+}
+.links-markers{
+    background: black;
+    width: 200px;
+    margin-top: 10px;
+}
+.links-markers a{
+    color: white;
+    display: list-item;
+    padding:15px;
+}
+.image{
+    width: 100px;
+    height: 80px;
+    background-image: url(media/weather-sun.jpg);
+    border: 3px dotted orangered;
+    border-radius:5px;
+}
+.post1 {
+    width: 1100px;
+    margin-top:30px ;
+    background: #930303;
+    color: white;
+}
+.post2 {
+    width: 1100px;
+    margin-top:30px ;
+    background: #930303;
+    color: white;
+}
+.post1 .image{
+    float: left;
+    margin-right: 10px;
+}
+.post2 .image{
+    float: right;
+    margin-left: 10px;
+}
+
+.pogoda{
+    margin-top: 50px;
+    width: 500px;
+}
+.pogoda div{
+    height: 150px;
+    display: inline-block;
+    margin: 0px;
+}
+.pogoda_vniz{
+    font-size: 25px;
+    text-align: center;
+    transform: translateY(-20px);
+}
+.pogoda_verh{
+    width:100%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    font-size: 20px;
+    background: rgb(47, 142, 180);
+    color:white;
+    margin: 0px;
+}

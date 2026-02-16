@@ -1,0 +1,11 @@
+.heart{
+    position: absolute;
+    background-color: blue;
+    height:605px;
+    width: 240px;
+    z-index: 100;
+}
+.rr{
+    position: absolute;
+    bottom:0px;
+}
