@@ -99,6 +99,15 @@ main{
     background: transparent;
     border: 3px solid white;
 }
+.arrow{
+    display:flex ;
+    justify-content: center;
+    margin-top: 230px;
+}
+.arrow img{
+    width: 40px;
+    height: 20px;
+}
 /* О НАС */
 .ContentBlock2{
     width: 100%;
