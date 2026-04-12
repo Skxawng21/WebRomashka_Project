@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Практическая работа №28</title>
+</head>
+<body class="bg-light">
+<!-- 
+container - блок
+
+navbar - панель навигации
+bg-white - белый фон
+shadow-sm - маленькая тень
+sticky-top - 
+py-2/my-4- отступы сверху и снизу
+navbar-brand - логотип
+
+fw-bold - жирный шрифт
+gap-3 - gap 24px 
+
+dropdown — контейнер для выпадающего списка
+
+btn - кнопки
+btn-outline-primary/success - Прозрачные кнопки с цветной рамкой синий/зелёный
+dropdown-toggle - — кнопка, открывающая меню
+dropdown-menu — контейнер выпадающего списка
+dropdown-item — элемент внутри выпадающего списка
+dropdown-item — разделительная линия в выпадающем списке
+
+rounded-3 — скругление углов
+
+col-md-10 — колонка шириной 10/12
+
+input-group - объединяет поле ввода с дополнительными элементами
+input-group-text - Стиль для дополнительного элемента внутри input-group
+form-contro - Базовый стиль для полей ввода
+-->
+<!-- Навбар с лого и ссылками в одной строке -->
+<nav class="navbar bg-white shadow-sm sticky-top py-2">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">BookStore</a>
+        <!-- Ссылки жанров и авторов в одной строке с лого -->
+        <div class="d-flex flex-wrap gap-3">
+            <div class="dropdown">
+                <button class="btn btn-outline-primary dropdown-toggle" type="button" >Жанры</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Все книги</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Роман</a></li>
+                    <li><a class="dropdown-item" href="#">Классика</a></li>
+                    <li><a class="dropdown-item" href="#">Антиутопия</a></li>
+                    <li><a class="dropdown-item" href="#">Фэнтези</a></li>
+                    <li><a class="dropdown-item" href="#">Научная фантастика</a></li>
+                    <li><a class="dropdown-item" href="#">Сатира</a></li>
+                </ul>
+            </div>
+            
+            <div class="dropdown">
+                <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown">Авторы</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Все авторы</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Михаил Булгаков</a></li>
+                    <li><a class="dropdown-item" href="#">Фёдор Достоевский</a></li>
+                    <li><a class="dropdown-item" href="#">Джордж Оруэлл</a></li>
+                    <li><a class="dropdown-item" href="#">Джоан Роулинг</a></li>
+                    <li><a class="dropdown-item" href="#">Джон Толкин</a></li>
+                    <li><a class="dropdown-item" href="#">Эрих Мария Ремарк</a></li>
+                    <li><a class="dropdown-item" href="#">Фрэнк Герберт</a></li>
+                    <li><a class="dropdown-item" href="#">Рэй Брэдбери</a></li>
+                    <li><a class="dropdown-item" href="#">Лев Толстой</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="container my-4">
+    <!-- Поисковая строка -->
+    <div class="bg-white rounded-3 shadow-sm p-3 mb-4">
+        <div class="row g-2">
+            <div class="col-md-10">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Поиск по названию или автору..." id="searchInput">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-secondary w-100" id="clearSearch">Очистить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Сетка книг -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="booksGrid">
+        <!-- Карточка книги 1 -->
+        <div class="col">
+            <div class="card h-100 shadow-sm" data-book-id="1">
+                <img src="img/ind/1.svg" class="card-img-top" alt="Мастер и Маргарита" style="height: 250px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Мастер и Маргарита</h5>
+                    <p class="card-text text-muted">Михаил Булгаков</p>
+                    <span class="badge bg-secondary">Роман</span>
+                    <span class="badge bg-info text-dark">1967</span>
+                </div>
+                <div class="card-footer bg-white ">
+                    <button class="btn btn-primary btn-sm w-100" >Подробнее</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка книги 2 -->
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="img/ind/2.svg" class="card-img-top" alt="Преступление и наказание" style="height: 250px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Преступление и наказание</h5>
+                    <p class="card-text text-muted">Фёдор Достоевский</p>
+                    <span class="badge bg-secondary">Классика</span>
+                    <span class="badge bg-info text-dark">1866</span>
+                </div>
+                <div class="card-footer bg-white border-top-0">
+                    <button class="btn btn-primary btn-sm w-100" >Подробнее</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка книги 3 -->
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="img/ind/3.svg" class="card-img-top" alt="1984" style="height: 250px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">1984</h5>
+                    <p class="card-text text-muted">Джордж Оруэлл</p>
+                    <span class="badge bg-secondary">Антиутопия</span>
+                    <span class="badge bg-info text-dark">1949</span>
+                </div>
+                <div class="card-footer bg-white border-top-0">
+                    <button class="btn btn-primary btn-sm w-100" >Подробнее</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка книги 4 -->
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="img/ind/4.svg" class="card-img-top" alt="Гарри Поттер" style="height: 250px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Гарри Поттер и философский камень</h5>
+                    <p class="card-text text-muted">Джоан Роулинг</p>
+                    <span class="badge bg-secondary">Фэнтези</span>
+                    <span class="badge bg-info text-dark">1997</span>
+                </div>
+                <div class="card-footer bg-white border-top-0">
+                    <button class="btn btn-primary btn-sm w-100" >Подробнее</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка книги 5 -->
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="img/ind/5.svg" class="card-img-top" alt="Властелин колец" style="height: 250px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Властелин колец: Братство кольца</h5>
+                    <p class="card-text text-muted">Джон Толкин</p>
+                    <span class="badge bg-secondary">Фэнтези</span>
+                    <span class="badge bg-info text-dark">1954</span>
+                </div>
+                <div class="card-footer bg-white border-top-0">
+                    <button class="btn btn-primary btn-sm w-100" >Подробнее</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка книги 6 -->
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="img/ind/6.svg" class="card-img-top" alt="Идиот" style="height: 250px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Идиот</h5>
+                    <p class="card-text text-muted">Фёдор Достоевский</p>
+                    <span class="badge bg-secondary">Классика</span>
+                    <span class="badge bg-info text-dark">1869</span>
+                </div>
+                <div class="card-footer bg-white border-top-0">
+                    <button class="btn btn-primary btn-sm w-100" >Подробнее</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="bg-white text-center text-muted py-3 mt-4 border-top">
+    <div class="container">
+        <small>📚 Онлайн библиотека — практическая работа №28. Все материалы вымышлены.</small>
+    </div>
+</footer>
+</body>
+</html>

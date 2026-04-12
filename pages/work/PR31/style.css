@@ -1,0 +1,271 @@
+      :root {
+          --beige: #F5F5DC;
+          --bordeaux: #800020;
+          --black: #000000;
+          --dark-grey: #0a0a0a;
+          --card-bg: #111111;
+          --accent-red: #a30029;
+          --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+      }
+      
+      * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+      }
+
+      body {
+          background-color: var(--black);
+          color: var(--beige);
+          font-family: var(--font-main);
+          line-height: 1.6;
+          overflow-x: hidden;
+      }
+
+      header {
+          padding: 5rem 1rem 3rem;
+          text-align: center;
+          position: relative;
+          border-bottom: 1px solid rgba(128, 0, 32, 0.3);
+      }
+
+      .front-info {
+          margin-bottom: 2.5rem;
+          text-transform: uppercase;
+          letter-spacing: 0.15em;
+          font-size: 0.75rem;
+          opacity: 0.8;
+          line-height: 2;
+      }
+
+      .logo {
+          font-size: 1rem;
+          font-weight: 300;
+          letter-spacing: 8px;
+          margin-bottom: 1.5rem;
+          color: var(--beige);
+          opacity: 0.6;
+          transition: 2s;
+      }
+      .logo:hover {
+        transform: rotate(360deg) scale(1.1);
+        letter-spacing: 12px;
+        }
+
+      h1 {
+          font-size: clamp(2rem, 8vw, 4rem);
+          text-transform: uppercase;
+          letter-spacing: 0.2em;
+          margin: 1rem 0;
+          font-weight: 900;
+          background: linear-gradient(135deg, var(--beige) 0%, var(--bordeaux) 100%);
+          -webkit-background-clip: text;
+          color: transparent;
+      }
+
+      .date-box {
+          font-size: 1.2rem;
+          font-weight: 400;
+          letter-spacing: 4px;
+          color: var(--bordeaux);
+          margin-top: 1.5rem;
+      }
+
+      .wave-container {
+          width: 100%;
+          height: 60px;
+          overflow: hidden;
+          margin: 2rem 0;
+          opacity: 0.5;
+      }
+
+      .container {
+          max-width: 1200px;
+          margin: 0 auto 6rem;
+          padding: 0 2rem;
+          display: grid;
+          grid-template-columns: 1fr 350px;
+          gap: 4rem;
+      }
+      .card {
+          background: var(--card-bg);
+          border-radius: 16px;
+          padding: 3rem;
+          margin-bottom: 3rem;
+          border: 1px solid rgba(245, 245, 220, 0.05);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+          transition: 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 60px rgba(128, 0, 32, 0.3);
+       }
+
+      .card h2 {
+          color: var(--bordeaux);
+          margin-bottom: 2.5rem;
+          font-size: 1.25rem;
+          text-transform: uppercase;
+          letter-spacing: 4px;
+          border-bottom: 1px solid rgba(128, 0, 32, 0.3);
+          padding-bottom: 1rem;
+      }
+
+      .annotation {
+          font-size: 1.15rem;
+          text-align: center;
+          max-width: 900px;
+          margin: 0 auto 4rem;
+          line-height: 1.9;
+          color: rgba(245, 245, 220, 0.9);
+          font-weight: 300;
+          padding: 0 1rem;
+      }
+
+      .segment {
+          padding-bottom: 2.5rem;
+          margin-bottom: 2.5rem;
+          border-bottom: 1px solid rgba(245, 245, 220, 0.05);
+          transition: 0.3s ;
+      }
+      .segment:hover {
+        transform: translateX(8px);
+       }
+
+      .segment:last-child {
+          border-bottom: none;
+          margin-bottom: 0;
+      }
+
+      .segment-header {
+          margin-bottom: 1.5rem;
+      }
+
+      .segment-title {
+          font-weight: 800;
+          font-size: 1.5rem;
+          color: var(--beige);
+          display: block;
+          margin-bottom: 0.5rem;
+      }
+      .segment:hover .segment-title{
+        transform: translateX(12px) scale(1.05);
+      }
+      .nomination {
+          color: var(--bordeaux);
+          font-size: 0.8rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+      }
+
+      .credits-grid {
+          display: grid;
+          grid-template-columns: 180px 1fr;
+          gap: 15px 30px;
+          font-size: 0.95rem;
+      }
+
+
+
+      .role-label {
+          color: var(--bordeaux);
+          font-weight: 600;
+          text-transform: uppercase;
+          font-size: 0.75rem;
+          letter-spacing: 1px;
+          opacity: 0.8;
+      }
+
+      .name-value {
+          color: var(--beige);
+          font-weight: 300;
+      }
+
+      .name-value span {
+          display: block;
+          margin-bottom: 6px;
+      }
+
+      .personnel-list {
+          list-style: none;
+      }
+
+      .personnel-item {
+          margin-bottom: 1.5rem;
+          padding-bottom: 1rem;
+          border-bottom: 1px solid rgba(245, 245, 220, 0.05);
+      }
+
+      .personnel-role {
+          display: block;
+          color: var(--bordeaux);
+          font-weight: bold;
+          font-size: 0.7rem;
+          letter-spacing: 2px;
+          margin-bottom: 0.25rem;
+      }
+
+      .personnel-name {
+          font-size: 0.9rem;
+          font-weight: 300;
+      }
+
+      .horoscope-item {
+          padding: 1rem;
+          background: rgba(128, 0, 32, 0.1);
+          border-radius: 12px;
+          margin-bottom: 1rem;
+          border: 1px solid rgba(128, 0, 32, 0.2);
+      }
+
+      .zodiac {
+          font-weight: 700;
+          display: block;
+          color: var(--beige);
+          margin-bottom: 0.5rem;
+          font-size: 0.85rem;
+          text-transform: uppercase;
+      }
+
+      footer {
+          text-align: center;
+          padding: 5rem 1rem;
+          font-size: 0.8rem;
+          border-top: 1px solid rgba(128, 0, 32, 0.2);
+          background: var(--black);
+      }
+
+      .on-air {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 1.5rem;
+          padding: 0.5rem 1.5rem;
+          border: 1px solid var(--bordeaux);
+          border-radius: 50px;
+          transition: all 0.4s ease;
+        cursor: pointer;
+      }
+      .on-air:hover {
+        transform: rotate(-3deg) scale(1.02);
+        background: rgba(128, 0, 32, 0.2);
+        border-color: var(--accent-red);
+      }
+
+      .dot {
+          width: 8px;
+          height: 8px;
+          background: #ff0000;
+          border-radius: 50%;
+          box-shadow: 0 0 8px #ff0000;
+      }
+      @media (max-width: 1024px) {
+          .container {
+              grid-template-columns: 1fr;
+          }
+      }
+
+
+
+

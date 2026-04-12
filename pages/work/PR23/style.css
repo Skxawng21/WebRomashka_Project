@@ -1,0 +1,197 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: #F6F2F2;
+}
+/* ШАПКА */
+header{
+    width: 800px;
+    height: 80px;
+    background: #0281E4;
+    margin: auto;
+    display: flex;
+}
+.header-angelina{
+    width: 700px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+.header-menu{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-menu div{
+    width: 50px;
+    height: 40px;
+    background: url(img/9.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* ПРОФИЛЬ */
+.profille{
+    width: 800px;
+    height: 500px;
+    margin: auto;
+    background: url(img/8.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    margin-bottom: 50px;
+}
+.foto-name{
+    width: 90%;
+    height: 250px;
+    display: flex;
+    margin: auto;
+    gap: 50px;
+}
+/* ФОТО */
+.Angelina{
+    width: 200px;
+    height: 200px;
+    background: url(img/1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.soo{
+    width: 50px;
+    height: 50px;
+    background: url(img/2.png);
+    transform: translateX(150px);
+}
+/* ИМЯ */
+.Angelina-info{
+    width: 400px;
+}
+.Angelina-info h2{
+    font-size: 45px;
+    padding-bottom: 20px;
+}
+.Angelina-info p{
+    font-size: 25px ;
+    padding-bottom: 20px;
+}
+.Angelina-info button{
+    width: 160px;
+    height: 60px;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    background: #31BB1D;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+.button-img{
+    width: 20px;
+    height: 20px;
+    margin-right: 20PX;
+    background: url(img/7.png);
+    background-size: cover;
+}
+/* СТАТИСТИКА */
+.statistick{
+    width: 90%;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+.info-block{
+    width: 30%;
+    text-align: center;
+}
+.ib1{
+    border-right: 1px solid white;
+}
+.info-block h3{
+    font-size: 45px;
+}
+.info-block p{
+    font-size: 15px;
+    color: gainsboro;
+}
+/* ПОСТ */
+.post-block{
+    width: 740px;
+    margin: auto;
+    background: white;
+    border: .1px solid #E6E5E5;
+    border-radius: 0 0 8px 8px;
+    border-top: 6px solid #34BC21;
+    box-shadow: 5px 5px 5px gray;
+}
+/* ПОСТ ПРОФИЛЬ */
+.post-profille{
+    width: 90%;
+    display: flex;
+    padding-top: 20px;
+    gap: 30px;
+    margin: auto;
+}
+.post-profille-img{
+    width: 150px;
+    height: 150px;
+    background: url(img/1.png);
+    background-size: cover;
+}
+.profille-info{
+    width: 400px;
+    margin-top: 20px;
+}
+.Name{
+    font-size: 35px;
+}
+.Time{
+    font-size: 18px;
+    color: rgb(163, 154, 154);
+}
+.settings{
+    transform: translate(30px , 15px);
+}
+/* ПОСТ ТЕКСТ */
+.post-txt{
+    width: 90%;
+    margin: auto;
+}
+/* СТАТИСТИКА */
+.statistick{
+    display: flex;
+    justify-content: left;
+}
+.statistick-like{
+    padding-right: 50px;
+    display: flex;
+    align-items: center;
+}
+.statistick-commit{
+    padding-right: 50px;
+    display: flex;
+    align-items: center;
+}
+/* КОММЕНТАИЙ */
+.Comment{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+.input-box input{
+    width: 500px;
+    height: 50px;
+    border: 1px solid rgb(163, 154, 154);
+}
+.OK{
+    width: 100px;
+    border: none;
+    color: white;
+    background: #31BB1D;
+    font-size: 30px;
+}

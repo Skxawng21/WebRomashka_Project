@@ -1,0 +1,149 @@
+  /* ===== ИНФОГРАФИКА ===== */
+.infographics {
+    margin: 20px 16px 30px 16px;
+    background: #F8FAFC;
+    padding: 16px;
+}
+
+.infographics-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Общие карточки */
+.card-chart, .card-metric {
+    background: white;
+    border-radius: 20px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border: 1px solid #EFF3F8;
+}
+
+.card-chart h3 {
+    font-size: 20px;
+    color: #64748B;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.trend-up {
+    color: #10B981;
+    background: #E8F5E9;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* Круговая диаграмма (CSS Only) */
+.pie-chart {
+    width: 120px;
+    height: 120px;
+    margin: 20px auto ;
+    border-radius: 50%;
+    position: relative;
+}
+/* Переопределяем цвета через инлайн-стили, но для поддержки задаем стандарт */
+.pie-chart {
+    background: conic-gradient(#2563EB 0% 55%, #F59E0B 0% 80%, #10B981 0% 100%);
+}
+.pie-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 50%;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 11px;
+    margin-top: 10px;
+}
+.legend span span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    margin-right: 4px;
+}
+
+/* График (Столбцы) */
+.line-chart {
+    margin-top: 10px;
+}
+.chart-bars {
+    display: flex;
+    align-items: flex-end;
+    height: 100px;
+}
+.bar-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.bar {
+    width: 100%;
+    max-width: 35px;
+    background-color: #CBD5E1;
+    border-radius: 8px 8px 4px 4px;
+}
+.bar-wrapper span {
+    font-size: 11px;
+    color: #64748B;
+}
+.chart-note {
+    font-size: 13px;
+    color: #64748B;
+    text-align: center;
+    margin-top: 12px;
+    border-top: 1px solid #F1F5F9;
+    padding-top: 10px;
+}
+
+/* Карточка метрики */
+.card-metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.metric-value {
+    text-align: center;
+    flex: 1;
+}
+.metric-number {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1E293B;
+    display: block;
+}
+.metric-label {
+    font-size: 11px;
+    color: #64748B;
+}
+.rating-stars {
+    text-align: center;
+    flex: 1;
+}
+.rating-stars span:first-child {
+    color: #FBBF24;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+.rating-text {
+    font-size: 11px;
+    color: #64748B;
+    display: block;
+}

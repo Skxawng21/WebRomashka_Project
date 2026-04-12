@@ -1,0 +1,459 @@
+*{margin: 0;
+    padding: 0;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+}
+:root{
+    --main-color:#2563EB;
+    --font-color:#DBEAFE;
+    --opisnie-color:#64748B;
+    --new-color:#F59E0B;
+    --text-color:#1E293B;
+
+    --main-size:16px;
+    --opisanie-size:12px;
+    --filter-size:14px;
+    --header-size:17.6;
+
+    --fw-bold:600;
+    --fw-regular:300;
+    --fw-medium:500;
+}
+body{
+    width: 402px;
+    height: 1420px;
+    margin: auto;   
+    background: white;
+}
+/* ШАПКА */
+header{
+    width: 100%;
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+}
+.settings{
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: right;
+    background:#DBEAFE ;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.settings img{
+    padding: 9px;
+}
+/* ФИЛЬТРЫ */
+.filter{
+    width: 100%;
+    height: 85px;
+    display: flex;
+}
+.poisk{
+    width: 100%;
+    height: 38px;
+    padding:10px;
+    display: flex;
+    background: #E0E0E0;
+    border-radius:50px ;
+}
+.poisk-img{
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+.poisk-input{
+    width: 350px;
+    height: 38px;
+    border: none;
+    background: #E0E0E0;
+}
+.poisk-input::placeholder{
+    font-size: 18px;
+}
+.scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem;
+    scrollbar-width: thin;
+}
+.type {
+    padding: 0.75rem 1.5rem;
+    background: white;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: 0.2s;
+}        
+
+.type:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+.type1{
+    background: #2563EB;
+    color: white;
+} 
+
+/* БЛОКИ С ТОВАРА */
+.arenda{
+    display: flex;
+    flex-wrap: wrap;
+}
+.block{
+    width: 400px;
+    border-radius: 20px;
+    border: 1px solid gainsboro;
+    box-shadow: 1px 5px 5px gainsboro;
+    margin-bottom: 30px
+}
+.arenda-img{
+    width: 400px;
+}
+.arenda-img img{
+    width: 400px;
+    border-radius: 20px 20px 0 0;
+}
+.sell{
+    color: #2563EB;
+    background: white;
+    padding: 10px 20px;
+    font-weight: 700;
+    border-radius: 15px;
+    position: relative;
+    top: -220px;
+    left: 220px;
+}
+.name{
+    padding-left: 20px;
+}
+.NameBlock{
+    font-size: 20px;
+}
+.info-new{
+    background: #F59E0B;
+    font-size: 12px;
+    color: white;
+    padding: 5px 9px;
+    border-radius: 10px;
+}
+.locka{
+    width: 350px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid gainsboro;
+    padding: 12px 0;
+}
+.geo{
+    width: 17px;
+    height: 17px;
+}
+.adres{
+    color: gray;
+}
+
+.info{
+    display: flex;
+    font-size: 14px;
+    padding: 10px 0;
+}
+.inf{
+    padding-left: 15px;
+}
+/* МЕНЮ */
+footer{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0px;
+    border-top: 1px solid rgb(242, 238, 238);
+}
+.block-menu{
+    width: 80px;
+    font-size: 20px;
+}
+.block-menu a{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-decoration: none;
+    color: #64748B;
+}
+.block-menu img{
+    width: 30px;
+}
+.active-list{
+    color: #2563EB;
+}
+
+/* ИЗБРАНОЕ */
+.list2{
+    height: 750px;
+    display: flex;
+    align-items: center;
+}
+.izbranoe{
+    width: 400px;
+    height: 220px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.star{
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 20px;
+}
+.pysto{
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+.izbranoe-text{
+    width: 300px;
+    text-align: center;
+    margin-top: 20px;
+    color: rgb(154, 151, 151);
+}
+.start-poisk{
+    background: #2563EB;
+    border: none;
+    width: 170px;
+    height: 50px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    margin-top: 20px;
+    box-shadow: 0px 5px 10px #97afe4;
+    cursor: pointer;
+}
+.start-poisk p{
+    width: 170px;
+    align-items: center;
+    font-weight: 700;
+}
+
+/* ПРОФИЛЬ */
+.profile{
+    height: 800px;
+}
+.prof-infa{
+    width: 250px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.profil-photo{
+    width: 100px;
+    height: 100px;
+    background: rgb(218, 218, 218);
+    border-radius: 50%;
+}
+.profile-txt{
+    width: 400px;
+    font-size: 22px;
+    font-weight: 700;
+}
+.profile-name{
+    width: 400px;
+    font-weight: 700;
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.email{
+    color: #64748B;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.setting-profile{
+    display: flex;
+    flex-wrap: wrap;
+}
+.profile-ob{
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.arrow{
+    width: 10px;
+    height: 14px;
+    background: url(img/arrow.png);
+    background-repeat: no-repeat;
+}
+.st-prof{
+    width: 100%;
+    height: 50px;
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.meseng{
+    background: red;
+    color: white;
+    width: 10px;
+    height: 20px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 19px;
+    font-weight: 700;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.red{
+    color: red;
+}
+
+/* ИНФОГРАФИКА */
+.infographics {
+    margin: -30px 10px 80px 20px;
+}
+
+.infographics-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card-chart, .card-metric {
+    background: white;
+    border-radius: 20px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border: 1px solid #EFF3F8;
+}
+
+.card-chart h3 {
+    font-size: 20px;
+    color: #64748B;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.trend-up {
+    color: #10B981;
+    background: #E8F5E9;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.pie-chart {
+    width: 120px;
+    height: 120px;
+    margin: 20px auto ;
+    border-radius: 50%;
+    position: relative;
+} 
+.pie-chart {
+    background: conic-gradient(#2563EB 0% 55%, #F59E0B 0% 80%, #10B981 0% 100%);
+}
+.pie-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 50%;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 11px;
+    margin-top: 10px;
+}
+.legend span span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    margin-right: 4px;
+}
+
+.line-chart {
+    margin-top: 10px;
+}
+.chart-bars {
+    display: flex;
+    align-items: flex-end;
+    height: 100px;
+}
+.bar-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.bar {
+    width: 100%;
+    max-width: 35px;
+    background-color: #CBD5E1;
+    border-radius: 8px 8px 4px 4px;
+}
+.bar-wrapper span {
+    font-size: 11px;
+    color: #64748B;
+}
+.chart-note {
+    font-size: 13px;
+    color: #64748B;
+    text-align: center;
+    margin-top: 12px;
+    border-top: 1px solid #F1F5F9;
+    padding-top: 10px;
+}
+
+.card-metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.metric-value {
+    text-align: center;
+    flex: 1;
+}
+.metric-number {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1E293B;
+    display: block;
+}
+.metric-label {
+    font-size: 11px;
+    color: #64748B;
+}
+.rating-stars {
+    text-align: center;
+    flex: 1;
+}
+.rating-stars span:first-child {
+    color: #FBBF24;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+.rating-text {
+    font-size: 11px;
+    color: #64748B;
+    display: block;
+}

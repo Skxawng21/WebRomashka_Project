@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css"/>
+    <title>ПРОГРАММА | КОД.59 - Что такое любовь?</title>
+    <style>
+      :root {
+          --beige: #F5F5DC;
+          --bordeaux: #800020;
+          --black: #000000;
+          --dark-grey: #0a0a0a;
+          --card-bg: #111111;
+          --accent-red: #a30029;
+          --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+      }
+      
+      * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+      }
+
+      body {
+          background-color: var(--black);
+          color: var(--beige);
+          font-family: var(--font-main);
+          line-height: 1.6;
+          overflow-x: hidden;
+      }
+
+      /* Scroll-driven gradient overlay */
+      .scroll-gradient {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          z-index: 100;
+          opacity: 0;
+          transition: opacity 0.4s ease;
+          background: radial-gradient(circle at 20% 30%, rgba(128,0,32,0.15) 0%, rgba(0,0,0,0) 70%);
+      }
+      
+      .scroll-gradient.active {
+          opacity: 1;
+      }
+      
+      /* Dynamic header shadow */
+      header {
+          padding: 5rem 1rem 3rem;
+          text-align: center;
+          position: relative;
+          border-bottom: 1px solid rgba(128, 0, 32, 0.3);
+          transition: box-shadow 0.3s ease, background 0.3s ease;
+      }
+      
+      header.scrolled {
+          box-shadow: 0 15px 40px rgba(128, 0, 32, 0.4), 0 0 30px rgba(128, 0, 32, 0.2);
+          background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(30,0,10,0.98) 100%);
+          border-bottom-color: var(--bordeaux);
+      }
+      
+      /* Floating shadow for cards on scroll */
+      .card {
+          background: var(--card-bg);
+          border-radius: 16px;
+          padding: 3rem;
+          margin-bottom: 3rem;
+          border: 1px solid rgba(245, 245, 220, 0.05);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+          transition: transform 0.3s ease, box-shadow 0.4s ease, border-color 0.3s ease;
+      }
+      
+      .card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 25px 60px rgba(128, 0, 32, 0.3);
+      }
+      
+      /* Dynamic card shadow on scroll (when in viewport) */
+      .card.in-sight {
+          box-shadow: 0 30px 70px rgba(128, 0, 32, 0.5), 0 0 0 1px rgba(128, 0, 32, 0.2);
+          border-color: rgba(128, 0, 32, 0.4);
+      }
+      
+      /* Segment shadow effect */
+      .segment {
+          padding-bottom: 2.5rem;
+          margin-bottom: 2.5rem;
+          border-bottom: 1px solid rgba(245, 245, 220, 0.05);
+          transition: transform 0.3s, box-shadow 0.3s, text-shadow 0.2s;
+      }
+      
+      .segment:hover {
+          transform: translateX(8px);
+      }
+      
+      /* Animated gradient border effect for active elements */
+      @keyframes borderGlow {
+          0% { border-color: rgba(128, 0, 32, 0.2); box-shadow: 0 0 0 0 rgba(128, 0, 32, 0); }
+          50% { border-color: rgba(128, 0, 32, 0.8); box-shadow: 0 0 12px 2px rgba(128, 0, 32, 0.5); }
+          100% { border-color: rgba(128, 0, 32, 0.2); box-shadow: 0 0 0 0 rgba(128, 0, 32, 0); }
+      }
+      
+      .on-air.active-pulse {
+          animation: borderGlow 1.2s ease-in-out infinite;
+      }
+      
+      .front-info {
+          margin-bottom: 2.5rem;
+          text-transform: uppercase;
+          letter-spacing: 0.15em;
+          font-size: 0.75rem;
+          opacity: 0.8;
+          line-height: 2;
+      }
+
+      .logo {
+          font-size: 1rem;
+          font-weight: 300;
+          letter-spacing: 8px;
+          margin-bottom: 1.5rem;
+          color: var(--beige);
+          opacity: 0.6;
+          transition: 2s;
+      }
+      .logo:hover {
+        transform: rotate(360deg) scale(1.1);
+        letter-spacing: 12px;
+      }
+
+      h1 {
+          font-size: clamp(2rem, 8vw, 4rem);
+          text-transform: uppercase;
+          letter-spacing: 0.2em;
+          margin: 1rem 0;
+          font-weight: 900;
+          background: linear-gradient(135deg, var(--beige) 0%, var(--bordeaux) 100%);
+          -webkit-background-clip: text;
+          color: transparent;
+          transition: text-shadow 0.3s;
+      }
+      
+      h1.glow-text {
+          text-shadow: 0 0 18px rgba(128, 0, 32, 0.7);
+      }
+
+      .date-box {
+          font-size: 1.2rem;
+          font-weight: 400;
+          letter-spacing: 4px;
+          color: var(--bordeaux);
+          margin-top: 1.5rem;
+      }
+
+      .wave-container {
+          width: 100%;
+          height: 60px;
+          overflow: hidden;
+          margin: 2rem 0;
+          opacity: 0.5;
+      }
+
+      .container {
+          max-width: 1200px;
+          margin: 0 auto 6rem;
+          padding: 0 2rem;
+          display: grid;
+          grid-template-columns: 1fr 350px;
+          gap: 4rem;
+      }
+      
+      .card h2 {
+          color: var(--bordeaux);
+          margin-bottom: 2.5rem;
+          font-size: 1.25rem;
+          text-transform: uppercase;
+          letter-spacing: 4px;
+          border-bottom: 1px solid rgba(128, 0, 32, 0.3);
+          padding-bottom: 1rem;
+          transition: letter-spacing 0.2s, border-color 0.3s;
+      }
+      
+      .card.in-sight h2 {
+          letter-spacing: 6px;
+          border-bottom-color: var(--bordeaux);
+      }
+
+      .annotation {
+          font-size: 1.15rem;
+          text-align: center;
+          max-width: 900px;
+          margin: 0 auto 4rem;
+          line-height: 1.9;
+          color: rgba(245, 245, 220, 0.9);
+          font-weight: 300;
+          padding: 0 1rem;
+          transition: text-shadow 0.3s;
+      }
+      
+      .annotation.scroll-illuminated {
+          text-shadow: 0 0 12px rgba(128, 0, 32, 0.5);
+      }
+
+      .segment-header {
+          margin-bottom: 1.5rem;
+      }
+
+      .segment-title {
+          font-weight: 800;
+          font-size: 1.5rem;
+          color: var(--beige);
+          display: block;
+          margin-bottom: 0.5rem;
+          transition: transform 0.2s, text-shadow 0.2s;
+      }
+      .segment:hover .segment-title{
+        transform: translateX(12px) scale(1.05);
+      }
+      
+      .nomination {
+          color: var(--bordeaux);
+          font-size: 0.8rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+      }
+
+      .credits-grid {
+          display: grid;
+          grid-template-columns: 180px 1fr;
+          gap: 15px 30px;
+          font-size: 0.95rem;
+      }
+
+      .role-label {
+          color: var(--bordeaux);
+          font-weight: 600;
+          text-transform: uppercase;
+          font-size: 0.75rem;
+          letter-spacing: 1px;
+          opacity: 0.8;
+      }
+
+      .name-value {
+          color: var(--beige);
+          font-weight: 300;
+      }
+
+      .name-value span {
+          display: block;
+          margin-bottom: 6px;
+      }
+
+      .personnel-list {
+          list-style: none;
+      }
+
+      .personnel-item {
+          margin-bottom: 1.5rem;
+          padding-bottom: 1rem;
+          border-bottom: 1px solid rgba(245, 245, 220, 0.05);
+          transition: transform 0.2s, text-shadow 0.2s;
+      }
+      
+      .personnel-item.scroll-glow {
+          transform: translateX(4px);
+          text-shadow: 0 0 4px rgba(128, 0, 32, 0.4);
+      }
+
+      .personnel-role {
+          display: block;
+          color: var(--bordeaux);
+          font-weight: bold;
+          font-size: 0.7rem;
+          letter-spacing: 2px;
+          margin-bottom: 0.25rem;
+      }
+
+      .personnel-name {
+          font-size: 0.9rem;
+          font-weight: 300;
+      }
+
+      .horoscope-item {
+          padding: 1rem;
+          background: rgba(128, 0, 32, 0.1);
+          border-radius: 12px;
+          margin-bottom: 1rem;
+          border: 1px solid rgba(128, 0, 32, 0.2);
+          transition: box-shadow 0.3s, transform 0.2s;
+      }
+      
+      .horoscope-item.glow-card {
+          box-shadow: 0 0 15px rgba(128, 0, 32, 0.6);
+          transform: scale(1.01);
+          background: rgba(128, 0, 32, 0.2);
+      }
+
+      .zodiac {
+          font-weight: 700;
+          display: block;
+          color: var(--beige);
+          margin-bottom: 0.5rem;
+          font-size: 0.85rem;
+          text-transform: uppercase;
+      }
+
+      footer {
+          text-align: center;
+          padding: 5rem 1rem;
+          font-size: 0.8rem;
+          border-top: 1px solid rgba(128, 0, 32, 0.2);
+          background: var(--black);
+          transition: box-shadow 0.3s, border-color 0.3s;
+      }
+      
+      footer.footer-glow {
+          box-shadow: 0 -10px 40px rgba(128, 0, 32, 0.3);
+          border-top-color: var(--bordeaux);
+      }
+
+      .on-air {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 1.5rem;
+          padding: 0.5rem 1.5rem;
+          border: 1px solid var(--bordeaux);
+          border-radius: 50px;
+          transition: all 0.4s ease;
+          cursor: pointer;
+      }
+      .on-air:hover {
+        transform: rotate(-3deg) scale(1.02);
+        background: rgba(128, 0, 32, 0.2);
+        border-color: var(--accent-red);
+      }
+
+      .dot {
+          width: 8px;
+          height: 8px;
+          background: #ff0000;
+          border-radius: 50%;
+          box-shadow: 0 0 8px #ff0000;
+      }
+      
+      @media (max-width: 1024px) {
+          .container {
+              grid-template-columns: 1fr;
+          }
+      }
+      
+      /* Scroll progress ring (optional gradient accent) */
+      .scroll-progress {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          background: rgba(0,0,0,0.6);
+          backdrop-filter: blur(4px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 1000;
+          cursor: pointer;
+          opacity: 0;
+          transition: opacity 0.3s, transform 0.2s;
+          border: 1px solid var(--bordeaux);
+          color: var(--beige);
+          font-size: 12px;
+          font-weight: bold;
+      }
+      
+      .scroll-progress.visible {
+          opacity: 1;
+      }
+      
+      .scroll-progress:hover {
+          transform: scale(1.1);
+          background: rgba(128,0,32,0.7);
+      }
+      
+      /* Gradient text effect for roles */
+      .gradient-border-effect {
+          transition: all 0.2s;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Fixed gradient overlay that intensifies on scroll -->
+    <div class="scroll-gradient" id="scrollGradient"></div>
+    
+    <!-- Scroll to top progress button -->
+    <div class="scroll-progress" id="scrollProgress">↑<br><span id="scrollPercent" style="font-size: 8px;">0%</span></div>
+    
+    <header id="mainHeader">
+      <div class="front-info">
+        ОТДЕЛЕНИЕ: Вычислительная техника<br />
+        КОНЦЕРТНАЯ ПРОГРАММА: Специальный весенний эфир
+      </div>
+      <div class="logo">КОД.59 / 59.9 FM</div>
+      <h1 id="mainTitle">ЧТО ТАКОЕ ЛЮБОВЬ?</h1>
+      <div class="date-box">03 МАРТА 2026</div>
+    </header>
+
+    <div class="wave-container">
+      <svg width="100%" height="60" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" >
+        <path d="M0 30 Q 360 0 720 30 T 1440 30" fill="none" stroke="#800020" stroke-width="2" >
+          <animate attributeName="d" values="M0 30 Q 360 0 720 30 T 1440 30; M0 30 Q 360 60 720 30 T 1440 30; M0 30 Q 360 0 720 30 T 1440 30" dur="5s" repeatCount="indefinite" />
+        </path>
+      </svg>
+    </div>
+
+    <div class="annotation" id="mainAnnotation">
+      &ldquo;Радиоэфир &mdash; это интимный разговор между тем, кто говорит, и
+      тем, кто слушает. На этой частоте мы ищем ответ на вечный вопрос. Через
+      танец, голос и слово наши герои проживают истории привязанности и
+      нежности, пульсирующие на волне 59.9 FM.&rdquo;
+    </div>
+
+    <div class="container">
+      <main>
+        <section class="card" id="programCard">
+          <h2>Программа эфира</h2>
+
+          <!-- Номер 1 -->
+          <article class="segment">
+            <div class="segment-header">
+              <span class="segment-title">№1. Первый импульс</span>
+              <span class="nomination"
+                >Номинация: Хореографическая миниатюра</span
+              >
+            </div>
+            <div class="credits-grid">
+              <div class="role-label">Участники:</div>
+              <div class="name-value">
+                <span>Иванов Иван , группа ИСП-21-1</span>
+                <span>Петрова Анна , группа КС-23-2</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Номер 2 -->
+          <article class="segment">
+            <div class="segment-header">
+              <span class="segment-title">№2. Письма из пепла</span>
+              <span class="nomination">Номинация: Художественное слово</span>
+            </div>
+            <div class="credits-grid">
+              <div class="role-label">Исполнитель:</div>
+              <div class="name-value">
+                <span>Сидорова Анастасия Александровна, преподаватель</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Номер 3 -->
+          <article class="segment">
+            <div class="segment-header">
+              <span class="segment-title">№3. Ритм мегаполиса</span>
+              <span class="nomination">Номинация: Эстрадный вокал</span>
+            </div>
+            <div class="credits-grid">
+              <div class="role-label">Участник:</div>
+              <div class="name-value">
+                <span>Кузнецова Ольга , группа ИСВ-24-3</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Номер 4 -->
+          <article class="segment">
+            <div class="segment-header">
+              <span class="segment-title">№4. Кафе случайных встреч</span>
+              <span class="nomination">Номинация: Театрализованный номер</span>
+            </div>
+            <div class="credits-grid">
+              <div class="role-label">Герои и роли:</div>
+              <div class="name-value">
+                <span
+                  >Бармен &mdash; Козлов Николай , группа
+                  ИСВ-22-1</span
+                >
+                <span
+                  >Алкаш &mdash; Смирнова Юлия , группа
+                  ИСП-22-1</span
+                >
+              </div>
+              <div class="role-label">Участники ансамбля:</div>
+              <div class="name-value">
+                <span>Васильев Игорь , группа КС-22-1</span>
+                <span>Зайцева Марина , группа ВР-25-1</span>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <aside>
+        <section class="card" id="teamCard">
+          <h2>Команда эфира</h2>
+          <ul class="personnel-list">
+            <li class="personnel-item">
+              <span class="personnel-role">Режиссёр</span>
+              <span class="personnel-name"
+                >Вишневская Елена , группа ВР-21-1</span
+              >
+            </li>
+            <li class="personnel-item">
+              <span class="personnel-role">Сценарист</span>
+              <span class="personnel-name"
+                >Романов Александр , группа ИСП-22-3</span
+              >
+            </li>
+            <li class="personnel-item">
+              <span class="personnel-role">Декоратор</span>
+              <span class="personnel-name"
+                >Светлова Марина , группа ИСВ-23-1</span
+              >
+            </li>
+            <li class="personnel-item">
+              <span class="personnel-role">Звукорежиссёр</span>
+              <span class="personnel-name"
+                >Кац Виктор , группа КС-24-2</span
+              >
+            </li>
+            <li class="personnel-item">
+              <span class="personnel-role">Работники сцены</span>
+              <span class="personnel-name"
+                >Никитин А, Попов Д. (группа ВР-25-1)</span
+              >
+            </li>
+          </ul>
+        </section>
+
+        <section class="card" id="horoscopeCard" style="border: 1px solid var(--bordeaux);">
+          <h2>Гороскоп любви</h2>
+          <div class="horoscope-item">
+            <span class="zodiac">Овен &mdash; Весы</span>
+            <span style="font-size: 0.8rem; opacity: 0.8;"
+              >Гармония в эфире и в жизни. Настройтесь на одну волну.</span
+            >
+          </div>
+          <div class="horoscope-item">
+            <span class="zodiac">Лев &mdash; Стрелец</span>
+            <span style="font-size: 0.8rem; opacity: 0.8;"
+              >Яркие эмоции на частоте страсти. Не бойтесь громких слов.</span
+            >
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <footer id="mainFooter">
+      <div class="on-air" id="onAirBtn">
+        <div class="dot"></div>
+        <span>В ПРЯМОМ ЭФИРЕ: 59.9 MHz</span>
+      </div>
+      <p style="opacity: 0.5;">
+        Организационный комитет Фестиваля &copy; 2026. <br />
+        Данные участников соответствуют официальным ведомостям.
+      </p>
+    </footer>
+
+  </body>
+</html>
