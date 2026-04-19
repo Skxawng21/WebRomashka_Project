@@ -4,4 +4,4 @@ Disallow: /style/
 
 Allow: /style/main.css
 
-Sitemap:
+Sitemap:https://skxawng21.github.io/WebRomashka_Project/Sitemap.xml
