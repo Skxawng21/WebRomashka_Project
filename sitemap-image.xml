@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <url>
+        <loc>https://skxawng21.github.io/WebRomashka_Project/pages/personal.html</loc>
+        <image:image>
+            <image:loc>https://skxawng21.github.io/WebRomashka_Project/img/1765725109129.jpg</image:loc>
+            <image:title>Персональный сайт Порошина Романа: Фото с страницы о себе </image:title>
+            <image:caption>Красивая фотография с крсивым человеком </image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://skxawng21.github.io/WebRomashka_Project/index.html</loc>
+        <image:image>
+            <image:loc>https://skxawng21.github.io/WebRomashka_Project/img/NoImage.png</image:loc>
+            <image:title>Нет фотографии</image:title>
+            <image:caption>Просто отсутствие изображения</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://skxawng21.github.io/WebRomashka_Project/pages/new2.html</loc>
+        <image:image>
+            <image:loc>https://skxawng21.github.io/WebRomashka_Project/img/NewsImg/IMG_20260419_151347_834.png</image:loc>
+            <image:title>Великий и ужасный Ситчихин О.В.</image:title>
+            <image:caption>Кране враждебно настроенный к студентам математик</image:caption>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://skxawng21.github.io/WebRomashka_Project/pages/new2.html</loc>
+        <image:image>
+            <image:loc>https://skxawng21.github.io/WebRomashka_Project/img/NewsImg/IMG_20260419_151400_155.png</image:loc>
+            <image:title>Легнеда авиационного техникума</image:title>
+            <image:caption>Без комментариев</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://skxawng21.github.io/WebRomashka_Project/pages/new2.html</loc>
+        <image:image>
+            <image:loc>https://skxawng21.github.io/WebRomashka_Project/img/NewsImg/IMG_20260419_151356_811.png</image:loc>
+            <image:title>Ситх с берёзой</image:title>
+            <image:caption>Простая фотография где просто математик обнимается с просто берёзой</image:caption>
+        </image:image>
+    </url>
+</urlset>
