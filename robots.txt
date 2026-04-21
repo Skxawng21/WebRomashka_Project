@@ -2,6 +2,6 @@ User-agent:*
 
 Disallow: /style/
 
-Allow: /style/main.css
+Allow: /pages/
 
 Sitemap:https://skxawng21.github.io/WebRomashka_Project/Sitemap.xml
